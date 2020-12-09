@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-origin: border-box;
+}
+
+body{
+    height: auto;
+    background-image: url(images/jelly.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgba(229, 83, 248, 0.863);
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    color: rgb(238, 230, 230);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.navlinks{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.navlinks li{
+    list-style: none;
+}
+
+.navlinks a{
+    color: rgb(238, 230, 230);
+    text-decoration: none;
+    letter-spacing:  3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger{
+    display: none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: rgb(238, 230, 230);
+}
+
+@media screen and (max-width: 760px){
+    body{
+        overflow-x: hidden;
+    }
+    .navlinks{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color:rgba(229, 83, 248, 0.863); 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .navlinks li{
+        opacity: 0;
+        
+    }
+
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-active{
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
